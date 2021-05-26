@@ -14,7 +14,7 @@ var score=0;
 var fruit_destroy1=0;
 var gamesound;
 var knife_hitSound,gameoverSound;
-
+var sound=true;
 var wheel_hit=0;
 //var fruit_destroy2=0;
 function preload() {
@@ -192,7 +192,12 @@ if(keyDown('r')){
     textSize(40);
     text("GAMEOVER!!!",200,100);
     knife.velocityY=0;
-    gameoverSound.play();
+  gamesound.stop();
+   if(sound) 
+{
+  gameoverSound.play();
+  sound=false;
+}
   }
 
  drawSprites();
